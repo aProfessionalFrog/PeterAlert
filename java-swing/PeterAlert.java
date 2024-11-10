@@ -1,17 +1,12 @@
-import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-import java.io.IOException;
+import javax.swing.JOptionPane;
 
-public enum PeterAlert {
-	;
+public class PeterAlert {
 
-	private static final ImageIcon PETER_IMAGE;
-	
-	static {
-		PETER_IMAGE = new ImageIcon(PeterAlert.class.getResource("peter.gif"));
-	}
+	private static final ImageIcon PETER_IMAGE = new ImageIcon(PeterAlert.class.getResource("peter.png"));
 
-	public static void showPeterAlert(){
+	public static void main(String[] args) {
 		JOptionPane.showMessageDialog(null, "", "Peter Alert", JOptionPane.INFORMATION_MESSAGE, PETER_IMAGE);
+		System.out.println("Nyeheheh hey Lois remember that time I was a Java application? Frickin' schweet.");
 	}
 }
