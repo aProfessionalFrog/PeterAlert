@@ -20,10 +20,14 @@ Run `build.bat`
 
 ## Have a blast
 
-`PeterAlert_popups.java` makes a Peter popup every second. They all close if you click enter.
+To build these classes instead of `PeterAlert.java`, change CLASS in the build files to the name of the class that you are trying to build.
 
-`PeterAlert_service.java` randomly makes a Peter popup about every 5 minutes, on average. You can change this by changing the `MINUTES` value.
+- `PeterAlert_popups.java` makes a Peter popup every second. They all close if you click enter.
+
+- `PeterAlert_service.java` randomly makes a Peter popup about every 5 minutes, on average. You can change this by changing the `MINUTES` value.
 ### On Linux, you can make this an autorun service using systemd
+
+Run `sudo cp /usr/bin/autopeter ./peter` to put `peter` in Unix System Resources.
 ```
 [Unit]
 Description=Shows you Peter
@@ -48,4 +52,4 @@ Stop it using `systemctl --user stop peter`
 2. In the `Open` field, type `shell:startup`
 3. In the folder that opens, add a shortcut to the jar file
 
-### It is recommended to leave the service disabled because the JVM is not known for being light on resources, and it can severly impact login time.
+### It is recommended to leave run on startup disabled because the JVM is not known for being light on resources, and it can severly impact login time.
