@@ -9,7 +9,7 @@ Run `build.sh`
 - Compiles Java class files
 - Builds .jar file
 - Turns .jar file into Linux executable
-    - Run `sudo cp /usr/bin/peter ./peter` to make it executable using the `peter` command
+    - Run `sudo cp /usr/local/bin/peter ./peter` and `sudo chmod +x /usr/local/bin/peter` to make it executable using the `peter` shell command
 
 ## Windows
 
@@ -27,7 +27,8 @@ To build these classes instead of `PeterAlert.java`, change CLASS in the build f
 - `PeterAlert_service.java` randomly makes a Peter popup about every 5 minutes, on average. You can change this by changing the `MINUTES` value.
 ### On Linux, you can make this an autorun service using systemd
 
-Run `sudo cp /usr/bin/autopeter ./peter` to put `peter` in Unix System Resources.
+Run `sudo cp /usr/loacl/bin/autopeter ./peter` to put `peter` in Unix System Resources.\
+Mark it as executable using `sudo chmod +x /usr/local/bin/autopeter`
 ```
 [Unit]
 Description=Shows you Peter
@@ -35,7 +36,7 @@ After=network-online.target
 Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
-ExecStart=/usr/bin/autopeter
+ExecStart=/usr/local/bin/autopeter
 Display=DISPLAY=:0
 
 [Install]
